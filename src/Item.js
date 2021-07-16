@@ -9,7 +9,7 @@ class Item {
   _checkAttributes = () => {
     if(this.quality <= 0) {
       throw new Error('Cannot go below minimum quality')
-    } else if (this.quality > 50) {
+    } else if (this.quality >= 50) {
       throw new Error('Cannot exceed maximum quality')
     }
   }
