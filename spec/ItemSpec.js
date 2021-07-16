@@ -30,5 +30,14 @@ describe("Item", function() {
     item.updateQuality()
     expect(item.quality).toBe(28)
   })
-  
+
+  it('cannot go below minimum quality', function() {
+    for(i = 0; i < 35; i++) {
+      item.updateQuality()
+    }
+    expect(item.quality).toBe(0)
+
+    expect(function() { item.updateQuality() }).toThrowError(Error, "Cannot go below minimum quality")
+  })
+
 });
