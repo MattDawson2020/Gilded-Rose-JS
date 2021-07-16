@@ -6,6 +6,7 @@ describe("GildedRose", function() {
     itemSpy = jasmine.createSpyObj("itemSpy", {}, { updateQuality: function() {return 'updating'} })
     gildedRose = new GildedRose([itemSpy])
     spyOn(gildedRose, 'updateQuality')
+    spyOn(itemSpy, 'updateQuality')
   });
 
   it("should update its items", function() {
