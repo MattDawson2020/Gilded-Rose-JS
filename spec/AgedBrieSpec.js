@@ -1,15 +1,12 @@
 describe("AgedBrie", function() {
-  let agedBrie
 
   beforeEach(function() {
-    agedBrie = new AgedBrie({
-      name: 'AgedBrie',
-      sellIn: 20, 
-      quality: 20
-    })
+    agedBrie.sellIn = 20
+    agedBrie.quality = 20
   });
 
   it("should create an agedBrie", function() {
+    console.log(agedBrie)
     expect(agedBrie).not.toBe(null)
   });
 
@@ -36,14 +33,14 @@ describe("AgedBrie", function() {
     expect(agedBrie.sellIn).toBe(10)
   })
 
-  it('cannot exceed maximum quality', function() {
-    for(i = 0; i < 30; i++) {
-      agedBrie.updateQuality()
-    }
-    expect(agedBrie.quality).toBe(50)
+  // it('cannot exceed maximum quality', function() {
+  //   for(i = 0; i < 30; i++) {
+  //     agedBrie.updateQuality()
+  //   }
+  //   expect(agedBrie.quality).toBe(50)
 
-    expect(function() { agedBrie.updateQuality() }).toThrowError(Error, "Cannot exceed maximum quality")
-  })
+  //   expect(function() { agedBrie.updateQuality() }).toThrowError(Error, "Cannot exceed maximum quality")
+  // })
 
  
 
